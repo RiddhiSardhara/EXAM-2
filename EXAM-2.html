@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Merge Sort//
+        let Array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        console.log("Original array :", Array);
+
+        let MiddleIndex = Math.floor(Array.length / 2)
+        let MiddleNumber = Array[MiddleIndex]
+        let LEFT = Array.slice(0, MiddleIndex)
+        let LLeftArray = LEFT.slice(0, Math.floor(LEFT.length / 2))
+        let RRIghtArray = LEFT.slice(Math.floor(LEFT.length / 2))
+        let Right = Array.slice(MiddleIndex + 1)
+        let RLeftArray = Right.slice(0, Math.floor(Right.length / 2))
+        let RRIGHTArray = Right.slice(Math.floor(Right.length / 2))
+
+
+        console.log(MiddleNumber, "index of Middle");
+        console.log(LEFT, "Left Array");
+        console.log(LLeftArray, "Left side Array");
+        console.log(RRIghtArray, "Right Side Array");
+
+        console.log(Right, "Right Array");
+        console.log(RLeftArray, "right left array");
+        console.log(RRIGHTArray, "right right array ");
+
+
+        let MergrArray = []
+        for (let i = 0; i < LLeftArray.length; i++) {
+            MergrArray.push(LLeftArray[i])
+        }
+        for (let i = 0; i < RRIghtArray.length; i++) {
+            MergrArray.push(RRIghtArray[i])
+        }
+        MergrArray.push(MiddleNumber)
+        for (let i = 0; i < RLeftArray.length; i++) {
+            MergrArray.push(RLeftArray[i])
+        }
+        for (let i = 0; i < RRIGHTArray.length; i++) {
+            MergrArray.push(RRIGHTArray[i])
+        }
+
+        console.log(MergrArray, "merge array");
+
+        // Linear Serch //
+        function Linear() {
+
+            let Array1 = [100, 200, 300, 400, 500, 900]
+            let Target = 500
+
+            for (let i = 0; i < Array1.length; i++) {
+                if (Array1[i] == Target)
+                    return i
+            }
+            return -1
+        }
+        console.log(Linear(), "index of linear");
+
+        // Queue All Operation //
+
+        class Q {
+            constructor() {
+                this.que = []
+                this.size = 9
+                this.head = 0
+                this.tail = this.que.length - 1
+            }
+
+            isEmpty() {
+                if (this.que.length === 0)
+                    console.log("empty");
+            }
+
+            add(element) {
+                if (this.que.length < this.size) {
+                    this.que.push(element)
+                }
+                else {
+                    console.log("que full");
+                }
+            }
+            print() {
+                console.log(this.que);
+            }
+            delete() {
+                this.que.shift()
+            }
+        }
+
+        const que = new Q()
+        que.delete()
+        que.add(10)
+        que.add(12)
+        que.add(15)
+        que.print()
+
+        // Sets with Add operaion and print all elements //
+
+         const result = new Map()
+        result.set("banana" , 500)
+        result.set("T-shirt" , 500)
+        console.log(result);
+
+        const Menu = result.get("banana")
+        console.log(Menu);
+
+        result.forEach(element =>{
+            console.log(element);
+        })
+
+    </script>
+</body>
+
+</html>
